@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank You, My Love</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#3b0d1f; --rose:#c9475f; --blush:#f7d9de; --cream:#fff6f3; --gold:#d9a86c;
+  --script:'Parisienne',cursive; --serif:'Cormorant Garamond',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--serif);font-size:1.25rem;color:var(--cream);background:var(--wine);overflow-x:hidden}
+h1,h2,h3{font-family:var(--script);font-weight:400}
+.sky{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.sky span{position:absolute;bottom:-40px;color:var(--rose);opacity:.55;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+section{position:relative;z-index:1;padding:90px 0}
+
+/* hero */
+#hero{min-height:100vh;display:flex;align-items:center;text-align:center;
+  background:radial-gradient(ellipse at 50% 40%,#7a1f3d 0%,var(--wine) 70%)}
+#hero h1{font-size:clamp(3.2rem,11vw,7.5rem);line-height:1.05;color:var(--blush)}
+#hero .to{font-size:1.1rem;letter-spacing:.08em;color:var(--gold)}
+#hero p.lead{max-width:34ch;margin:1.2rem auto 2rem;font-style:italic;font-size:1.5rem;color:var(--cream)}
+.btn-love{background:var(--rose);color:#fff;border:0;border-radius:50px;padding:.7rem 2.2rem;font-size:1.2rem;
+  font-family:var(--serif);font-weight:600;transition:transform .2s,background .2s}
+.btn-love:hover{background:#e0586f;color:#fff;transform:scale(1.05)}
+.beat{display:inline-block;animation:beat 1.4s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.18)}}
+
+/* thanks */
+#thanks{background:var(--cream);color:var(--wine)}
+#thanks h2,#letters h2,#promise h2{font-size:clamp(2.6rem,6vw,4rem);text-align:center;margin-bottom:.4rem}
+#thanks h2{color:var(--rose)}
+.sub{text-align:center;font-style:italic;opacity:.8;margin-bottom:3rem}
+.thank{padding:1.6rem 1.4rem;border-left:3px solid var(--rose);height:100%}
+.thank h3{font-size:2rem;color:var(--rose);margin-bottom:.3rem}
+.thank p{margin:0}
+
+/* letters */
+#letters{background:linear-gradient(var(--wine),#52132b)}
+#letters h2{color:var(--blush)}
+.envelope{cursor:pointer;background:var(--blush);color:var(--wine);border:0;width:100%;text-align:left;
+  padding:1.3rem 1.5rem;border-radius:6px;position:relative;font-family:var(--serif);font-size:1.3rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .25s}
+.envelope:hover{transform:translateY(-4px)}
+.envelope small{display:block;color:var(--rose);font-style:italic}
+.envelope .seal{position:absolute;right:1.2rem;top:50%;translate:0 -50%;color:var(--rose);font-size:1.8rem}
+.modal-content{background:#fffaf5;color:#4a1a28;border:0;border-radius:4px;
+  background-image:repeating-linear-gradient(transparent 0 35px,rgba(201,71,95,.13) 35px 36px)}
+.modal-title{font-family:var(--script);font-size:2.4rem;color:var(--rose)}
+.letter-body{font-size:1.35rem;line-height:36px}
+.letter-body .sign{font-family:var(--script);font-size:2rem;color:var(--rose);display:block;margin-top:12px}
+
+/* promise */
+#promise{background:var(--cream);color:var(--wine);text-align:center}
+#promise h2{color:var(--rose)}
+#promise ul{list-style:none;padding:0;max-width:34rem;margin:2rem auto}
+#promise li{padding:.9rem 0;border-bottom:1px dashed var(--rose)}
+#reveal{font-family:var(--script);font-size:clamp(2.4rem,7vw,4.4rem);color:var(--rose);min-height:1.4em;margin-top:1.5rem}
+footer{position:relative;z-index:1;text-align:center;padding:40px 0;background:var(--wine);color:var(--blush);font-style:italic}
+@media (prefers-reduced-motion:reduce){.sky span,.beat{animation:none}html{scroll-behavior:auto}}
+
+.shayari{text-align:center;font-style:italic;color:var(--rose);margin:36px 0;font-size:1.4rem}
+#shayari{background:var(--cream);color:var(--wine)}
+#shayari h2{font-size:clamp(2.6rem,6vw,4rem);text-align:center;color:var(--rose);margin-bottom:.4rem}
+.sh{text-align:center;padding:1.8rem 1rem;border-bottom:1px solid var(--blush);font-style:italic;font-size:1.45rem;line-height:1.7}
+</style>
+</head>
+<body>
+
+<div class="sky" id="sky" aria-hidden="true"></div>
+
+<section id="hero">
+  <div class="container">
+    <p class="to">For <span id="herName">DipaliKumari</span></p>
+    <h1>Thank you <span class="beat">&hearts;</span></h1>
+    <p class="lead">Babu, thank you for accepting me, for trusting me, for choosing me every single day.</p>
+    <a href="#thanks" class="btn btn-love">Read what's in my heart</a>
+  </div>
+</section>
+
+<section id="thanks">
+  <div class="container">
+    <h2>Thank you for&hellip;</h2>
+    <p class="sub">A few of the many reasons I'm grateful for you</p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="thank"><h3>Accepting me</h3><p>You saw all of me, the good and the messy, and you stayed. No one has ever made me feel so completely welcome.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="thank"><h3>Trusting me</h3><p>Trust is the most precious thing you could give, and you handed it to me. I will protect it like it is my own heart.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="thank"><h3>Being patient</h3><p>On my worst days you were gentle with me. You never made me feel small for being human.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="thank"><h3>Your smile</h3><p>It is my favourite place to rest. Whatever the day was, your smile makes it a good one.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="thank"><h3>Believing in me</h3><p>You see a better version of me than I do, and you make me want to become him.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="thank"><h3>Being you</h3><p>Just you, exactly as you are. You are the best thing that ever happened to me.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="letters">
+  <div class="container" style="max-width:760px">
+    <h2>Love letters</h2>
+    <p class="sub">Tap an envelope to open it</p>
+    <div class="d-grid gap-4" id="envelopes"></div>
+  </div>
+</section>
+
+<section id="shayari"><div class="container" style="max-width:760px"><h2>Shayari for you</h2><p class="sub">A few lines I wrote with my heart, Babu</p><div class="sh">You are the quiet in my loudest day,<br>the home I reach when I lose my way.<br>If every star were to fade tonight,<br>your smile alone would be my light.</div><div class="sh">I do not need the moon or sky,<br>I only need you, standing by.<br>For all the worlds that I could see,<br>the best of them is you, for me.</div><div class="sh">Some people come and pass like rain,<br>you stayed and healed my every pain.<br>You taught my restless heart to rest,<br>and in your love, I am truly blessed.</div><div class="sh">Your trust is the gift I hold most dear,<br>I will guard it, always, year by year.<br>Every promise I make, I make with my heart,<br>and I will keep it, right from the start.</div><div class="sh">Let time go on and seasons turn,<br>for you, my love, I will always yearn.<br>In every life and every place,<br>I would still search for your face.</div><div class="sh">Babu, you are my morning prayer,<br>my evening peace, my answered care.<br>If love is a poem, then you, my dear,<br>are every line I hold so near.</div></div></section>
+
+<section id="promise">
+  <div class="container">
+    <h2>My promises to you</h2>
+    <ul>
+      <li>I will always listen before I speak.</li>
+      <li>I will be honest, even when it is hard.</li>
+      <li>I will choose you on the easy days and the difficult ones.</li>
+      <li>I will never take your trust for granted.</li>
+      <li>I will love you a little more tomorrow than today.</li>
+    </ul>
+    <button class="btn btn-love" id="surprise">One last thing&hellip;</button>
+    <div id="reveal" aria-live="polite"></div>
+  </div>
+</section>
+
+<footer>Made with all my love, only for you, Babu. &hearts;</footer>
+
+<!-- Letter modal -->
+<div class="modal fade" id="letterModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="lt"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body letter-body" id="lb"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ====== EDIT THESE ====== */
+const HER_NAME = "DipaliKumari";   // her full name
+const NICK = "Babu";               // your pet name for her
+const DIYA = "Diya";
+const YOUR_NAME = "Yours, forever"; // or put your name here
+/* ======================== */
+
+document.getElementById('herName').textContent = HER_NAME;
+
+const letters = [
+  { title: "The day you said yes", sub: "Letter one",
+    text: `My dearest ${NICK},<br><br>I still remember the moment you accepted me. My heart was beating so loud that I was sure you could hear it. In that one second my whole world changed, and I became the luckiest person alive.<br><br>I had spent so long wondering whether someone like you could ever see something good in someone like me. And then you did. You looked at me, with all my flaws and all my silly habits, and you said yes. I do not think you will ever fully understand what that gave me. It gave me hope, it gave me peace, and it gave me a reason to look forward to every tomorrow.<br><br>Thank you, ${HER_NAME}, for taking a chance on me. I promise to spend every single day proving that it was the best decision you ever made.<div class="shayari">The day you chose me, my heart found its place,<br>and every sorrow vanished without a trace.</div>` },
+  { title: "For trusting me", sub: "Letter two",
+    text: `My dearest ${DIYA},<br><br>Trust is quiet, and it is the bravest thing a person can give. You gave it to me without making me beg for it. I know how much courage that took, because I know the world has not always been kind to hearts like yours.<br><br>You shared your fears with me. You let me see your tears, your laughter, your tired days and your happy ones. Every time you open up to me, I feel honoured, like you have handed me something fragile and priceless and said, &ldquo;Please keep this safe.&rdquo;<br><br>I will, Babu. I will keep it safe like it is my own heart, because it is. Whatever happens in life, you will always be safe with me: your secrets, your dreams and your whole beautiful self.<div class="shayari">To be trusted by you is my greatest prize,<br>more precious than the stars in the skies.</div>` },
+  { title: "When words aren't enough", sub: "Letter three",
+    text: `My love,<br><br>I have tried so many times to find the right words for what you mean to me, and none of them are big enough. You are my calm after a long day. You are my reason to smile at nothing. You are my favourite hello and my hardest goodbye.<br><br>When I am with you, time slows down. Even the simplest things, like a short walk, a silly message or a quiet evening, become memories I want to keep forever. You turned my ordinary days into something I look forward to.<br><br>If love had a face, I would recognise it at once, because it looks exactly like yours, ${HER_NAME}.<div class="shayari">No poem is long enough, no song so sweet,<br>to say what your love makes me feel complete.</div>` },
+  { title: "Read this when you miss me", sub: "Letter four",
+    text: `Sweetheart,<br><br>Close your eyes for a moment. Take a slow breath. I am right there with you, thinking of you, just like I am almost every minute of the day.<br><br>I know there are times when we cannot be together, and I know how heavy that can feel. On those days, remember that distance is only a number. My heart already knows the way to you, and it never gets lost.<br><br>If you feel low, remember how much you are loved. If you feel tired, remember that I am proud of you. If you feel alone, remember that I am only a call away, always. Until I can hold you again, keep this small promise safe: I am yours, ${NICK}, today and always.<div class="shayari">Miles may keep our hands apart,<br>but never the beating of my heart.</div>` },
+  { title: "When we fight, I still choose you", sub: "Letter five",
+    text: `My ${NICK},<br><br>We are two different people, and sometimes we will disagree. Sometimes I will say the wrong thing, or stay quiet when I should have spoken. When that happens, please remember this: I never stop loving you, not even for a moment.<br><br>Every argument teaches me something about how to love you better. I would rather fix things with you a hundred times than be right once without you. Your hand in mine is worth more than any argument I could ever win.<br><br>So if I ever hurt you, forgive me, and know that my heart is always trying to be better for you. You are worth every effort, every apology and every second of patience.<div class="shayari">Even when we quarrel and the night grows long,<br>my heart will still sing your name like a song.</div>` },
+  { title: "Forever, if you'll have me", sub: "Letter six",
+    text: `To the love of my life,<br><br>I do not know everything the future holds, but I know that I want you in every part of it. The ordinary days, the loud laughter, the quiet evenings, the late-night talks and the dreams we have not told anyone yet.<br><br>I want to be the one who celebrates your wins and holds you through your losses. I want to grow old, wiser and maybe a little sillier, with you beside me. I want to be your home, ${HER_NAME}, the same way you have become mine.<br><br>Thank you for letting me love you, Diya. Thank you for being my Babu. It is the greatest honour of my life, and I will keep choosing you for as long as I live.<div class="shayari">In every life, in every place,<br>I would find my way back to your face.</div>` }
+];
+
+const env = document.getElementById('envelopes');
+letters.forEach((l,i)=>{
+  const b = document.createElement('button');
+  b.className = 'envelope';
+  b.innerHTML = `<small>${l.sub}</small>${l.title}<span class="seal">&hearts;</span>`;
+  b.onclick = () => {
+    document.getElementById('lt').textContent = l.title;
+    document.getElementById('lb').innerHTML = l.text + `<span class="sign">${YOUR_NAME}</span>`;
+    bootstrap.Modal.getOrCreateInstance('#letterModal').show();
+  };
+  env.appendChild(b);
+});
+
+/* floating hearts */
+const sky = document.getElementById('sky');
+for(let i=0;i<22;i++){
+  const s = document.createElement('span');
+  s.textContent = '\u2665';
+  s.style.left = Math.random()*100+'%';
+  s.style.fontSize = (12+Math.random()*26)+'px';
+  s.style.animationDuration = (9+Math.random()*12)+'s';
+  s.style.animationDelay = (-Math.random()*20)+'s';
+  sky.appendChild(s);
+}
+
+/* typed surprise + heart burst */
+document.getElementById('surprise').onclick = function(){
+  const msg = `I love you, ${HER_NAME}. Thank you for everything.`;
+  const out = document.getElementById('reveal');
+  out.textContent = ''; let i = 0;
+  const t = setInterval(()=>{ out.textContent += msg[i++]; if(i>=msg.length) clearInterval(t); }, 60);
+  const r = this.getBoundingClientRect();
+  for(let n=0;n<26;n++){
+    const h = document.createElement('span');
+    h.textContent = '\u2665';
+    Object.assign(h.style,{position:'fixed',left:(r.left+r.width/2)+'px',top:(r.top+r.height/2)+'px',
+      color:'#c9475f',fontSize:(14+Math.random()*20)+'px',pointerEvents:'none',zIndex:9999,
+      transition:'transform 1.3s ease-out,opacity 1.3s'});
+    document.body.appendChild(h);
+    const a = Math.random()*Math.PI*2, d = 90+Math.random()*190;
+    requestAnimationFrame(()=>{ h.style.transform=`translate(${Math.cos(a)*d}px,${Math.sin(a)*d}px)`; h.style.opacity=0; });
+    setTimeout(()=>h.remove(),1400);
+  }
+};
+</script>
+</body>
+</html>
